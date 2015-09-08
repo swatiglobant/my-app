@@ -1,0 +1,27 @@
+<div class="container">
+  <div>
+    <acme-navbar></acme-navbar>
+  </div>
+    <div>
+        <h2>Basic Informtion form</h2>
+        <form class="form-horizontal" name="sampleForm">
+            <p><label>Username: </label>
+            <input type="text" name="username" ng-model="username" ng-minlength="2" ng-maxlength="8" required></p>
+            <p class="label label-warning" ng-show="sampleForm.username.$error.minlength">Username is too short.</p>
+            <p class="label label-warning" ng-show="sampleForm.username.$error.maxlength">Username is too long.</p>
+            <p class="label label-warning" ng-show="sampleForm.username.$error.required">Your username is required.</p>
+            <p><label>Email: </label>
+            <input type="email" name="email" ng-model="email" ng-minlength="5" ng-maxlength="20" required></p>
+            <p class="label label-warning" ng-show="sampleForm.email.$error.minlength">Email is too short.</p>
+            <p class="label label-warning" ng-show="sampleForm.email.$error.maxlength">Email is too long.</p>
+            <p class="label label-warning" ng-show="sampleForm.email.$error.required">Your Email is required.</p>
+            <p><label>Mobile Number: </label>
+            <input type="number" name="phone" ng-model="phone" ng-minlength="10" ng-maxlength="11" required></p>
+            <p class="label label-warning" ng-show="sampleForm.phone.$error.minlength">Mobile no is too short.</p>
+            <p class="label label-warning" ng-show="sampleForm.phone.$error.maxlength">Mobile no is too long.</p>
+            <p class="label label-warning" ng-show="sampleForm.phone.$error.required">Your Mobile no is required.</p>
+            <br><br><input type="submit" value="Submit" ng-click ="submitted = true">
+            <input type="reset" value="Reset">
+        </form>
+    </div>
+</div>

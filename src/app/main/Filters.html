@@ -1,0 +1,18 @@
+<div class="container">
+
+  <div>
+    <acme-navbar></acme-navbar>
+  </div>
+  <div>
+      <h3>List</h3>
+      <ul>
+          <li ng-repeat = "n in numbers"> {{ n }} </li>
+      </ul>
+  </div>
+  <div>
+      <h3>After applying Filter (ordinal)</h3>
+      <ul>
+          <li ng-repeat = "n in numbers"> {{ n | myFilter }} </li>
+      </ul>
+  </div>
+</div>

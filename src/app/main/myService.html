@@ -1,0 +1,15 @@
+<div class="container">
+  <div>
+    <acme-navbar></acme-navbar>
+  </div>
+    <h2>Recent Photos</h2>
+    <div>
+        <!-- <p>
+            {{array}}
+        </p> -->
+      <div ng-repeat="photo in array">
+          <img ng-src="{{ photo.url }}">
+          <p>by {{ photo.author }}</p>
+      </div>
+    </div>
+</div>
