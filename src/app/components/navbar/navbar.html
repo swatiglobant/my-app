@@ -7,12 +7,13 @@
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
-      <ul class="nav navbar-nav">
-        <li class="active"><a ng-href="#/">Home</a></li>
-        <li><a ng-href="#/Directive">Directive</a></li>
-        <li><a ng-href="#/Services">Services</a></li>
-        <li><a ng-href="#/Filters">Filter</a></li>
-        <li><a ng-href="#/Form">Form</a></li>
+      <ul id="list" class="nav navbar-nav" ng-controller="NavCtrl">
+        <!-- <li class="active"><a ng-href="#/">Home</a></li> -->
+        <li ng-class="{active: isActive('/')}"><a ng-href="#/">Home</a></li>
+        <li ng-class="{active: isActive('/Directive')}"><a ng-href="#/Directive">Directive</a></li>
+        <li ng-class="{active: isActive('/Services')}"><a ng-href="#/Services">Services</a></li>
+        <li ng-class="{active: isActive('/Filters')}"><a ng-href="#/Filters">Filter</a></li>
+        <li ng-class="{active: isActive('/Form')}"><a ng-href="#/Form">Form</a></li>
       </ul>
     </div>
   </div>

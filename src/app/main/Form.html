@@ -4,24 +4,37 @@
   </div>
     <div>
         <h2>Basic Informtion form</h2>
-        <form class="form-horizontal" name="sampleForm">
+        <form class="form-horizontal" name="sampleForm" novalidate>
             <p><label>Username: </label>
-            <input type="text" name="username" ng-model="username" ng-minlength="2" ng-maxlength="8" required></p>
+            <input type="text" name="username" ng-model="username" ng-minlength="2" ng-pattern="/^[a-zA-Z]{2,}$/" required></p>
             <p class="label label-warning" ng-show="sampleForm.username.$error.minlength">Username is too short.</p>
-            <p class="label label-warning" ng-show="sampleForm.username.$error.maxlength">Username is too long.</p>
+            <p class="label label-warning" ng-show="sampleForm.username.$error.pattern">Username is invalid.</p>
             <p class="label label-warning" ng-show="sampleForm.username.$error.required">Your username is required.</p>
             <p><label>Email: </label>
-            <input type="email" name="email" ng-model="email" ng-minlength="5" ng-maxlength="20" required></p>
-            <p class="label label-warning" ng-show="sampleForm.email.$error.minlength">Email is too short.</p>
-            <p class="label label-warning" ng-show="sampleForm.email.$error.maxlength">Email is too long.</p>
+            <input type="email" name="email" ng-model="email" ng-pattern="/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/" required></p>
+            <p class="label label-warning" ng-show="sampleForm.email.$error.pattern">Email is invalid.</p>
             <p class="label label-warning" ng-show="sampleForm.email.$error.required">Your Email is required.</p>
             <p><label>Mobile Number: </label>
-            <input type="number" name="phone" ng-model="phone" ng-minlength="10" ng-maxlength="11" required></p>
-            <p class="label label-warning" ng-show="sampleForm.phone.$error.minlength">Mobile no is too short.</p>
-            <p class="label label-warning" ng-show="sampleForm.phone.$error.maxlength">Mobile no is too long.</p>
+            <input type="number" name="phone" ng-model="phone" ng-pattern="/^\d{10}$/" required></p>
+            <p class="label label-warning" ng-show="sampleForm.phone.$error.pattern">Mobile no is not valid.</p>
             <p class="label label-warning" ng-show="sampleForm.phone.$error.required">Your Mobile no is required.</p>
-            <br><br><input type="submit" value="Submit" ng-click ="submitted = true">
+            <br><br>
+            <input type="submit" value="Submit" ng-disabled = !sampleForm.$valid ng-click= 'add()'>
             <input type="reset" value="Reset">
         </form>
+    </div>
+    <div>
+        <table class="table table-bordered">
+          <tr>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Mobile Number</th>
+          </tr>
+          <tr ng-repeat = "u in users">
+              <td>{{u.name}}</td>
+              <td>{{u.email}}</td>
+              <td>{{u.phone}}</td>
+          </tr>
+        </table>
     </div>
 </div>

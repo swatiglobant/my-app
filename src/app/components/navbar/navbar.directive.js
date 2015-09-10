@@ -3,7 +3,8 @@
 
   angular
     .module('myApp')
-    .directive('acmeNavbar', acmeNavbar);
+    .directive('acmeNavbar', acmeNavbar)
+    .controller('NavCtrl', NavCtrl);
 
   /** @ngInject */
   function acmeNavbar() {
@@ -28,5 +29,10 @@
       vm.relativeDate = moment(vm.creationDate).fromNow();
     }
   }
-
+  function NavCtrl($scope, $location) {
+      $scope.isActive = function(route) {
+          $scope.path = $location.path();
+          return $location.path() === route;
+      }
+  }
 })();

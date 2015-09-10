@@ -5,14 +5,14 @@
   </div>
   <div>
       <h3>List</h3>
-      <ul>
-          <li ng-repeat = "n in numbers"> {{ n }} </li>
+      <ul class="list-group">
+          <li class="list-group-item" ng-repeat = "n in numbers"> {{ n }} </li>
       </ul>
   </div>
   <div>
       <h3>After applying Filter (ordinal)</h3>
-      <ul>
-          <li ng-repeat = "n in numbers"> {{ n | myFilter }} </li>
+      <ul class="list-group">
+          <li class="list-group-item" ng-repeat = "n in numbers"> {{ n | myFilter }} </li>
       </ul>
   </div>
 </div>

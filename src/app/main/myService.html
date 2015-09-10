@@ -8,7 +8,7 @@
             {{array}}
         </p> -->
       <div ng-repeat="photo in array">
-          <img ng-src="{{ photo.url }}">
+          <img ng-src="{{ photo.url }}" alt="{{ photo.url }}">
           <p>by {{ photo.author }}</p>
       </div>
     </div>
